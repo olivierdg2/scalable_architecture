@@ -15,7 +15,7 @@ def get_color():
         "Pid": pid + ":" + rand
     }
 
-MAX_ITER = 80
+MAX_ITER = 30
 RE_START = -2
 RE_END = 1
 IM_START = -1

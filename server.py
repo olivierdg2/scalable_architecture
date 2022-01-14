@@ -1,9 +1,9 @@
-from flask import Flask, request, jsonify
-import numpy as np
-
-
+from flask import Flask, request
+import os 
+import random
 app = Flask(__name__)
-
+pid = str(os.getpid())
+rand = str(random.randint(0,100000))
 @app.get("/")
 def get_color():
     x = request.args.get("x")
@@ -11,7 +11,8 @@ def get_color():
     return {
         "x": x, 
         "y": y,
-        "value": str(mandelbrot_set(int(x), int(y)))
+        "value": str(mandelbrot_set(int(x), int(y))),
+        "Pid": pid + ":" + rand
     }
 
 MAX_ITER = 80
